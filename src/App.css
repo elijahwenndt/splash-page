@@ -5,7 +5,7 @@ body {
 
 .typewriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid green; /* The typwriter cursor */
+  border-right: .15em solid #1095c1; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
@@ -15,7 +15,6 @@ body {
 }
 
 
-
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
@@ -23,5 +22,49 @@ body {
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: green; }
+  50% { border-color: #1095c1; }
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fade-in.delay {
+  -webkit-animation-delay: 3.5s;
+  -moz-animation-delay: 3.5s;
+  animation-delay: 3.5s;
+}
+
+.hover {
+  --b: 0.1em;   /* the thickness of the line */
+  --c: #1095c1; /* the color */
+  
+  color: rgba(255, 255, 255, 0);
+  padding-block: var(--b);
+  background: 
+    linear-gradient(var(--c) 50%,rgb(255, 255, 255) 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+}
+.hover:hover {
+  --_p: 100%;
+  --_s: .3s;
+  cursor: pointer;
 }
