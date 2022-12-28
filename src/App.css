@@ -1,5 +1,5 @@
 body {
-  background: url("splashbackground.jpg") no-repeat center center fixed;
+  background: url("darkenedsplash.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -12,6 +12,7 @@ body {
   animation: 
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
+  font-family: monospace;
 }
 
 
@@ -67,4 +68,8 @@ body {
   --_p: 100%;
   --_s: .3s;
   cursor: pointer;
+}
+
+.mono {
+  font-family: monospace;
 }
